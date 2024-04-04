@@ -1,4 +1,5 @@
 from dwave.cloud import Client
 
-client = Client.from_config(token='XXXXXXXXXXXXXXXXXXXXXX')
-print(client.get_solvers())
+with Client.from_config() as client:
+    solvers = client.get_solvers()
+    print(solvers)
